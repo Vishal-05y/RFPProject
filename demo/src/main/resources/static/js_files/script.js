@@ -67,5 +67,6 @@ function validateLogin(type) {
         // Display error message
         alert("Incorrect password. Please try again.");
         return false; // Prevent form submission
+ 
     }
 }
