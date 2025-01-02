@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup & Login Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sty.css">
 </head>
+<div class="header">
+    <img src="engineer.png" alt="FIXIT Logo" class="header-icon">
+    <h1 class="header-title">FIXIT</h1>
+</div>
+
 <body>
+    
     <div class="container">
         <div class="signup-container">
             <h2>Login</h2>
@@ -19,15 +25,20 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required placeholder="Create a password">
                 </div>
-                <button type="submit">Sign Up</button>
+                <div class="form-group">
+                    <label for="re-password">Re-enter Password</label>
+                    <input type="password" id="re-password" name="re-password" required placeholder="Re-enter your password">
+                </div>
+                
+                <button type="submit">Log in</button>
             </form>
         </div>
 
         <div class="login-container">
             <h2>Sign up</h2>
             <div class="login-buttons">
-                <button onclick="toggleLogin('user')">Signup as a customer</button>
-                <button onclick="toggleLogin('admin')">Signup as a Employee
+                <button onclick="toggleLogin('user')">Sign up as a customer</button>
+                <button onclick="toggleLogin('admin')">Sign up as an Employee
                 </button>
             </div>
 
@@ -62,6 +73,6 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scr.js"></script>
 </body>
 </html>
