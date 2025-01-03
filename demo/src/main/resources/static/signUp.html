@@ -39,17 +39,14 @@
                 <button type="submit">Sign Up</button>
             </form>
         </div>
-
-        
     </div>
+
     <script>
-        <script>
-            const phoneInputField = document.querySelector("#phone");
-            const phoneInput = window.intlTelInput(phoneInputField, {
-              utilsScript:
-                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            });
-          </script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+          utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
     </script>
 
     <script>
@@ -69,6 +66,7 @@
             return true;
         }
     </script>
+
     <script src="/js_files/script.js"></script>
 </body>
 </html>

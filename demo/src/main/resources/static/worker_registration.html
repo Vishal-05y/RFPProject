@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="header">
+        <img src="engineer.png" alt="FIXIT Logo" class="header-icon">
+        <h1 class="header-title">FIXIT</h1>
+    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Registration Form</title>
+    <link rel="stylesheet" href="/css_files/worker_registration.css">
+    <style>
+        .category-title {
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .service-list {
+            display: none;
+            margin-left: 20px;
+        }
+        .service-item {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Worker Registration Form</h2>
+        <form action="#" method="post">
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="input-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="input-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="input-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male" required>
+                            <span>Male</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female" required>
+                            <span>Female</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="other" required>
+                            <span>Other</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="form-section">
+                <h3>Contact Information</h3>
+                <div class="input-group">
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" placeholder="Mobile number" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Street, City, State, Postal Code" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="emergencyContactName">Emergency Contact Number:</label>
+                    <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="form-section">
+                
+                <h3>Skills & Expertise</h3>
+                <div class="skills-grid">
+                    <!-- Beauty & Wellness -->
+                    <div class="skill-category">
+                        <div class="category-title" onclick="toggleVisibility('beauty-wellness')">Beauty & Wellness</div>
+                        <ul style="list-style-type:none;"   id="beauty-wellness" class="service-list">
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Beauticians"><img src="beautician.jpg"style="width:35px;height:45px;"><span>Beauticians</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Barbers"><img src="tools.png"style="width:35px;height:45px;"><span>Barbers</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Massage Therapists"><img src="massage.png"style="width:35px;height:45px;"><span>Massage Therapists</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Spa Therapists"><img src="spa.png"style="width:35px;height:45px;"><span>Spa Therapists</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Fitness Trainers"><img src="trainer.png"style="width:35px;height:45px;"><span>Fitness Trainers</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Yoga Trainers"><img src="yoga.png"style="width:35px;height:45px;"><span>Yoga Trainers</span></label></li>
+                        </ul>
+                    </div>
+
+                    <!-- Home Services -->
+                    <div class="skill-category">
+                        <div class="category-title" onclick="toggleVisibility('home-services')">Home Services</div>
+                        <ul style="list-style-type:none;" id="home-services" class="service-list">
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Electricians"><img src="electrician.png"style="width:35px;height:45px;"><span>Electricians</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Carpenters"><img src="saw.png"style="width:35px;height:45px;"><span>Carpenters</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Painters"><img src="painter.png"style="width:35px;height:45px;"><span>Painters</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="AC Technicians"><img src="repair.png"style="width:35px;height:45px;"><span>AC Technicians</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Appliance Repair Technicians"><img src="technician.png"style="width:35px;height:45px;"><span>Appliance Repair Technicians</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Housekeeping Staff"><img src="housekeeping.png"style="width:35px;height:45px;"><span>Housekeeping Staff</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Drivers"><img src="driver.png"style="width:35px;height:45px;"><span>Drivers</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Photographers"><img src="paparazzi.png"style="width:35px;height:45px;"><span>Photographers</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Nannies/Babysitters"><img src="babysitter.png"style="width:35px;height:45px;"><span>Nannies/Babysitters</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Security Guards"><img src="guard.png"style="width:35px;height:45px;"><span>Security Guards</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Event Planners"><img src="party.png"style="width:35px;height:45px;"><span>Event Planners</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Interior Designers"><img src="interior-design.png"style="width:35px;height:45px;"><span>Interior Designers</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Home Tutors"><img src="home.png"style="width:35px;height:45px;"><span>Home Tutors</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Gardening Services"><img src="man.png"style="width:35px;height:45px;"><span>Gardening Services</span></label></li>
+                        </ul>
+                    </div>
+
+                    <!-- Cleaning & Maintenance -->
+                    <div class="skill-category">
+                        <div class="category-title" onclick="toggleVisibility('cleaning-maintenance')">Cleaning & Maintenance</div>
+                        <ul style="list-style-type:none;" id="cleaning-maintenance" class="service-list">
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Home Cleaners"><img src="office.png"style="width:35px;height:45px;"><span>Home Cleaners</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Pest Control Experts"><img src="insecticide.png"style="width:35px;height:45px;"><span>Pest Control Experts</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Plumbing Experts"><img src="plumbing-maintenance.png"style="width:35px;height:45px;"><span>Plumbing Experts</span></label></li>
+                            <li class="service-item"><label class="skill-checkbox"><input type="checkbox" name="skills" value="Laundry Services"><img src="laundry.png"style="width:35px;height:45px;"><span>Laundry Services</span></label></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Preferences -->
+            <div class="form-section">
+                <h3>Work Preferences</h3>
+                <div class="input-group">
+                    <label for="workType">Type of Work:</label>
+                    <select id="workType" name="workType" required>
+                        <option value="">Select work type</option>
+                        <option value="construction">Construction</option>
+                        <option value="technical">Technical</option>
+                        <option value="manual">Manual</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="preferredLocations">Preferred Locations:</label>
+                    <input type="text" id="preferredLocations" name="preferredLocations" required>
+                </div>
+                <div class="input-group">
+                    <label for="travelPreferences">Travel Preferences:</label>
+                    <select id="travelPreferences" name="travelPreferences" required>
+                        <option value="">Select preference</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to toggle the visibility of a service list
+        function toggleVisibility(categoryId) {
+            const serviceList = document.getElementById(categoryId);
+            if (serviceList.style.display === "none" || serviceList.style.display === "") {
+                serviceList.style.display = "block";
+            } else {
+                serviceList.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
