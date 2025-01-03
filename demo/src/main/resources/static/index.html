@@ -3,73 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup & Login Page</title>
-    <link rel="stylesheet" href="/css_files/styles.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<div class="header">
-    <img src="/images/engineer.png" alt="FIXIT Logo" class="header-icon">
-    <h1 class="header-title">FIXIT</h1>
-</div>
-
 <body>
-    
-    <div class="container">
-        <div class="signup-container">
-            <h2>Login</h2>
-            <form id="signup-form" action="#" method="POST" onsubmit="return validateForm()">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required placeholder="Enter Username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Enter Password">
-                </div>
-                
-                
-                <button type="submit">Log in</button>
-            </form>
-        </div>
-
-        <div class="login-container">
-            <h2>Sign up</h2>
-            <div class="login-buttons">
-                <button >Sign up as a customer</button>
-                <button >Sign up as an Employee
-                </button>
-            </div>
-
-            <!-- User Login Form -->
-            <div id="user-login" class="login-form" style="display:none;">
-                <form id="user-login-form" action="#" method="POST" onsubmit="return validateLogin('user')">
-                    <div class="form-group">
-                        <label for="user-email">Email</label>
-                        <input type="email" id="user-email" name="user-email" required placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="user-password">Password</label>
-                        <input type="password" id="user-password" name="user-password" required placeholder="Enter your password">
-                    </div>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-
-            <!-- Admin Login Form -->
-            <div id="admin-login" class="login-form" style="display:none;">
-                <form id="admin-login-form" action="#" method="POST" onsubmit="return validateLogin('admin')">
-                    <div class="form-group">
-                        <label for="admin-email">Email</label>
-                        <input type="email" id="admin-email" name="admin-email" required placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="admin-password">Password</label>
-                        <input type="password" id="admin-password" name="admin-password" required placeholder="Enter your password">
-                    </div>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-        </div>
+    <div class="header">
+        <img src="/images/engineer.png" alt="FIXIT Logo" class="header-icon">
+        <h1 class="header-title">FIXIT</h1>
     </div>
-    <script src="/js_files/script.js"></script>
+    <button onclick="location.href='login.html'">Login</button>
 </body>
 </html>
