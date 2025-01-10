@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration Form</title>
+    <link rel="stylesheet" href="/css_files/worker_registration.css">
+</head>
+
+<body>
+    <h2>Customer Sign Up</h2>
+
+    <!-- Form to collect username and phone number -->
+    <form id="customer-signup-form" action="/router/customer/signup" method="POST" onsubmit="handleSignUp(event)">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="userName" required placeholder="Enter Username">
+        </div>
+
+        <div>
+            <label for="phoneNumber">Phone number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter Phone Number">
+        </div>
+
+        <button type="submit">Send OTP</button>
+    </form>
+
+    <!-- Form to validate the OTP, hidden by default -->
+    <form id="otp-validation-form" style="display:none;" action="/router/customer/validateOTP" method="POST">
+        <div>
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="oneTimePassword" required placeholder="Enter OTP">
+        </div>
+        <button type="submit">Validate OTP</button>
+    </form>
+
+    <script>
+        function handleSignUp(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = document.getElementById('customer-signup-form');
+            const formData = new FormData(form); // Collect form data
+
+            // Sending OTP request
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.message); // Show the OTP sent message
+                // Hide the signup form and show the OTP validation form
+                document.getElementById('customer-signup-form').style.display = 'none';
+                document.getElementById('otp-validation-form').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                alert('An error occurred while sending OTP. Please try again.'); // User-friendly error message
+            });
+        }
+    </script>
+
+</body>
+</html>

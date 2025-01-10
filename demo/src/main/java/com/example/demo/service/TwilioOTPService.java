@@ -7,6 +7,8 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.config.TwilioConfig;
 import com.example.demo.dto.OtpStatus;
@@ -24,9 +26,8 @@ public class TwilioOTPService {
     private TwilioConfig twilioConfig;
 
     private Map<String, String> otpMap = new HashMap<>();
-
     public Mono<SignUpResponseDto> sendOTPForSignUp(SignUpRequestDto signUpRequestDto) {
-        SignUpResponseDto signUpResponseDto=null;
+        SignUpResponseDto signUpResponseDto;
 
         try {
             PhoneNumber to = new PhoneNumber(signUpRequestDto.getPhoneNumber());
@@ -46,6 +47,7 @@ public class TwilioOTPService {
 
         return Mono.just(signUpResponseDto);
     }
+
 
     public Mono<String> validateOTP(String userInputOtp, String userName) {
         String storedOtp = otpMap.get(userName);

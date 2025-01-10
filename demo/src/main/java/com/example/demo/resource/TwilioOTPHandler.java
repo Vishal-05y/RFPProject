@@ -21,11 +21,17 @@ public class TwilioOTPHandler {
                 .flatMap(dto -> ServerResponse.status(HttpStatus.OK)
                         .body(BodyInserters.fromValue(dto)));
     }
-
+    
     public Mono<ServerResponse> validateOTP(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(SignUpRequestDto.class)
                 .flatMap(dto -> service.validateOTP(dto.getOneTimePassword(), dto.getUserName()))
                 .flatMap(dto -> ServerResponse.status(HttpStatus.OK)
                         .bodyValue(dto));
     }
+
+    public static String sendOTP(String mobileNumber) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'sendOTP'");
+    }
+    
 }

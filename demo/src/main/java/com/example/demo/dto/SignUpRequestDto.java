@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SignUpRequestDto {
-    private String phoneNumber="9390906408";
-    private String userName="Vishal";
+    private String phoneNumber;
+    private String userName;
     private String oneTimePassword;
+    //private String userType = "customer"; // Default value set to worker
 }
